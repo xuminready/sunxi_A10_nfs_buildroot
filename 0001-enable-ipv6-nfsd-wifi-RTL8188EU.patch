@@ -1,0 +1,45 @@
+From c3acd8b249eee09b47390fe61b6be47a37f47331 Mon Sep 17 00:00:00 2001
+From: MinXu <xuminready@Gmail.com>
+Date: Sun, 19 Apr 2020 22:45:00 -0700
+Subject: [PATCH 1/1] enable ipv6, nfsd, wifi(RTL8188EU)
+
+---
+ arch/arm/configs/sun4i_defconfig | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/configs/sun4i_defconfig b/arch/arm/configs/sun4i_defconfig
+index feef899..4033ad2 100644
+--- a/arch/arm/configs/sun4i_defconfig
++++ b/arch/arm/configs/sun4i_defconfig
+@@ -78,7 +78,7 @@ CONFIG_INET_AH=y
+ CONFIG_INET_ESP=y
+ CONFIG_INET_IPCOMP=y
+ # CONFIG_INET_DIAG is not set
+-# CONFIG_IPV6 is not set
++CONFIG_IPV6=y
+ # CONFIG_ANDROID_PARANOID_NETWORK is not set
+ CONFIG_NETWORK_SECMARK=y
+ CONFIG_BRIDGE=y
+@@ -120,7 +120,8 @@ CONFIG_SW_SATA_AHCI_PLATFORM=y
+ CONFIG_NETDEVICES=y
+ CONFIG_SUNXI_EMAC=y
+ CONFIG_PHYLIB=y
+-CONFIG_RTL8192CU_SW=m
++# CONFIG_BCM4330 is not set
++CONFIG_RTL8188EU=y
+ CONFIG_INPUT_FF_MEMLESS=y
+ CONFIG_INPUT_POLLDEV=y
+ # CONFIG_INPUT_MOUSEDEV_PSAUX is not set
+@@ -286,6 +287,9 @@ CONFIG_CONFIGFS_FS=y
+ CONFIG_NFS_FS=y
+ CONFIG_NFS_V3=y
+ CONFIG_NFS_V4=y
++CONFIG_NFSD=y
++CONFIG_NFSD_V3_ACL=y
++CONFIG_NFSD_V4=y
+ CONFIG_CIFS=y
+ CONFIG_NLS_DEFAULT="utf8"
+ CONFIG_NLS_CODEPAGE_437=y
+-- 
+1.9.1
+

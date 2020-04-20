@@ -1,0 +1,26 @@
+From 731ed2c3a270961a80a054d0a53ad71e083ed7f4 Mon Sep 17 00:00:00 2001
+From: MinXu <xuminready@Gmail.com>
+Date: Sun, 19 Apr 2020 22:49:20 -0700
+Subject: [PATCH 1/1] add tty0 for console
+
+This is optinal, make sure Console is set to tty0 in rootfs
+---
+ include/configs/sunxi-common.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/configs/sunxi-common.h b/include/configs/sunxi-common.h
+index d8b3ee0..eab4960 100644
+--- a/include/configs/sunxi-common.h
++++ b/include/configs/sunxi-common.h
+@@ -188,7 +188,7 @@
+ #endif
+ 
+ #define CONFIG_EXTRA_ENV_SETTINGS \
+-	"console=ttyS0,115200\0" \
++	"console=tty0 console=ttyS0,115200\0" \
+ 	"panicarg=panic=10\0" \
+ 	"extraargs=\0" \
+ 	"loglevel=8\0" \
+-- 
+1.9.1
+
