@@ -13,3 +13,10 @@ default tftp path,(cat /etc/init.d/S80tftpd-hpa)
 
 ## Buildroot : Using out of tree defconfig
 **make defconfig BR2_DEFCONFIG=../mk802ii/mk802ii_buildroot_defconfig O=../mk802ii/**
+
+## trouble shooting
+`scripts/mk_livesuit_img.sh: 69: scripts/mk_livesuit_img.sh: /home/mx/sunxi-bsp/allwinner-tools/bins/u_boot_env_gen: not found`
+
+u_boot_env_gen is a 32 bit program, if using 64 bit OS, need to install some libs. for Ubuntu 14.4, use the cmd below,
+
+**apt-get install libc6-i386**
