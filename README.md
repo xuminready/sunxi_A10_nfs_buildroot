@@ -20,3 +20,5 @@ default tftp path,(cat /etc/init.d/S80tftpd-hpa)
 u_boot_env_gen is a 32 bit program, if using 64 bit OS, need to install some libs. for Ubuntu 14.4, use the cmd below,
 
 **apt-get install libc6-i386**
+
+**apt-get install lib32stdc++6**
