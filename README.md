@@ -3,6 +3,9 @@ Using MK802ii for tftp, nfs, Shadowsocks-Manager server. Buildroot is used to cr
 
 *https://linux-sunxi.org/BSP*
 
+*https://linux-sunxi.org/FEL* (Through a special SD card image is convenient)
+
+
 - delete *.ext4 if any change of rootfs or rootfs size.
 - Muse use 64bit system, some program in allwinner-tools/bins/ are 64bit.
 
