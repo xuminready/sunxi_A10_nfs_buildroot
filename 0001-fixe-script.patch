@@ -1,0 +1,35 @@
+From 20f6956851f10e9232b401ff10929269fbff2463 Mon Sep 17 00:00:00 2001
+From: MinXu <xuminready@Gmail.com>
+Date: Thu, 23 Apr 2020 23:23:33 -0700
+Subject: [PATCH 1/1] fixe script
+
+The max rootfs partition for MK802ii is 1488Mb, it may change if kernel size change I guess.
+---
+ scripts/mk_ext4_rootfs.sh | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/scripts/mk_ext4_rootfs.sh b/scripts/mk_ext4_rootfs.sh
+index 2e242cb..5458d9e 100755
+--- a/scripts/mk_ext4_rootfs.sh
++++ b/scripts/mk_ext4_rootfs.sh
+@@ -20,7 +20,7 @@ make_rootfs()
+ 	local rootfs=$(readlink -f "$1")
+ 	local output=$(readlink -f "$2")
+ 	local fsizeinbytes=$(gzip -lq "$rootfs" | awk -F" " '{print $2}')
+-	local fsizeMB=$(expr $fsizeinbytes / 1024 / 1024 + 200)
++	local fsizeMB=1488 #$(expr $fsizeinbytes / 1024 / 1024 + 200)
+ 	local d= x=
+ 	local rootfs_copied=
+ 
+@@ -44,7 +44,7 @@ make_rootfs()
+ 		if [ -d "$d/sbin" ]; then
+ 			rootfs_copied=1
+ 			sudo mv "$d"/* $TARGET ||
+-				die "Failed to copy rootfs data"
++				echo "Failed to copy rootfs data $d/* $TARGET"
+ 			break
+ 		fi
+ 	done
+-- 
+1.9.1
+
