@@ -14,7 +14,7 @@ Using SystemV, Console must set to tty0. Do not use systemD for Linux kernel <3.
 ## add user
 **mkdir /home/**
 
-**addusr minxu -G sudo**
+**adduser minxu -G sudo**
 
 
 default tftp path,(cat /etc/init.d/S80tftpd-hpa)
